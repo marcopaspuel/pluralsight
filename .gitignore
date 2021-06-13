@@ -47,3 +47,6 @@ knife.rb
 **/.kitchen/logs
 
 .DS_Store
+
+# Pycharm
+.idea
