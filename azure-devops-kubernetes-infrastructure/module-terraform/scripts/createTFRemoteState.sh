@@ -1,10 +1,11 @@
+#!/bin/bash
 # Create Resource Group for Terraform Remote State
 groupName='demo-tfstate'
-groupLocation='Australia East'
+groupLocation='West Europe'
 group=$(az group create --name ${groupName} --location "${groupLocation}" --verbose)
 
 # Create Storage Account for Terraform Remote State
-accountName=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 12 | head -n 1)
+accountName="tstate$RANDOM"
 storage=$(az storage account create \
     --name ${accountName} \
     --resource-group $(echo $group | jq .name -r) \
