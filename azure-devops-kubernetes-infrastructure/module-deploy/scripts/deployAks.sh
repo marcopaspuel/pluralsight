@@ -9,7 +9,7 @@ fi
 
 # Create Resource Group
 groupName='demo-aks'
-groupLocation='eastus'
+groupLocation='westeurope'
 group=$(az group create --name ${groupName} --location "${groupLocation}" --verbose)
 
 # Deploy Log Analytics Workspace
